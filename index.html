@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Generator</title>
+    <style>
+        input {
+            width: 300px;
+            padding: 1rem;
+        }
+
+        .screen {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 800px) {
+            .screen {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="screen">
+        <form class="form">
+            <h3>Name</h3>
+            <input type="text" id='f_name' class='f-name'>
+            <h3>Last Name</h3>
+            <input type="text" id='l_name' class='l-name'>
+            <h3>Class</h3>
+            <input type="text" id='class' class='class'>
+            <h3>Number of Subject</h3>
+            <input type="text" id='nos' class='nos'>
+            <br>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+
+        <div class="output">
+            <h1>Result</h1>
+            <h3>First Name</h3>
+            <p class="name1"></p>
+            <h3>Last Name</h3>
+            <p class="name2"></p>
+            <h3>Class</h3>
+            <p class="stnd"></p>
+            <h3>Number of Subjects</h3>
+            <p class="subject"></p>
+        </div>
+    </div>
+
+    <script src='script.js'></script>
+</body>
+
+</html>
