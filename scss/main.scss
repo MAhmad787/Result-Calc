@@ -73,7 +73,18 @@
   font-size: 17px;
   display: none;
 }
-#submit {
-  display: none;
-}
+// #submit {
+// display: none;
+// }
 // ! JS Class
+
+////////////////////////////////////////////////////////////////////
+///  Stats
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  ul {
+    list-style: none;
+  }
+}

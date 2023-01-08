@@ -16,23 +16,23 @@
             <div class="name">
                 <h3>Name</h3>
                 <div class="fields">
-                    <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='First Name'
-                        class='f-name' id='f_name' required>
-                    <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Last Name'
-                        class='l-name' id='l_name' required>
+                    <input type="text" placeholder='First Name' class='f-name' id='f_name' required>
+                    <input type="text" placeholder='Last Name' class='l-name' id='l_name' required>
                 </div>
+            </div>
+            <div class="class">
+                <h3>Class</h3>
+                <input type="text" placeholder='Your Class' class='class' id='class' required>
             </div>
             <div class="city">
                 <h3>City</h3>
 
-                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Your City' class='city'
-                    id='city' required>
+                <input type="text" placeholder='Your City' class='city' id='city' required>
             </div>
             <div class="institute">
                 <h3>Institute</h3>
 
-                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Your Institute'
-                    class='institute' id='institute' required>
+                <input type="text" placeholder='Your Institute' class='institute' id='institute' required>
             </div>
             <div class="nos-box">
                 <h3>Number of Subjects</h3>
@@ -45,7 +45,7 @@
             </div>
             <div class="subjects-box" id='subj_box'>
                 <h3>Name of Subject <span id="count">1</span></h3>
-                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' id='n_subj' class='n-subj' required>
+                <input type="text" id='n_subj' class='n-subj' required>
                 <div class="marks">
                     <h3>Total Marks</h3>
                     <input type="text" name="total" id="tot" class="tot" required>
@@ -61,6 +61,45 @@
                 <input type="submit" value="Get Totals" class="submit" id="submit">
             </div>
         </form>
+    </main>
+
+    <hr>
+    <hr>
+    <hr>
+    <main class="output-container">
+        <h1>Your Result</h1>
+        <div class="details">
+            <h3>First Name : <span id='o_f_name'></span></h3>
+            <br>
+            <h3>Last Name : <span id='o_l_name'></span></h3>
+            <br>
+            <h3>Class : <span id='o_class'></span></h3>
+            <br>
+            <h3>City : <span id='o_city'></span></h3>
+            <br>
+            <h3>Institute : <span id='o_institute'></span></h3>
+        </div>
+        <div class="stats">
+            <ul class="sr-number" id="sr_number">
+                <h3>Sr No.</h3>
+            </ul>
+            <ul class="subject-name" id="subject_name">
+                <h3>Subject</h3>
+            </ul>
+
+            <ul class="subject-total" id="subject_total">
+                <h3>Total</h3>
+            </ul>
+            <ul class="subject-obt" id="subject_obt">
+                <h3>Obtained</h3>
+            </ul>
+            <!-- <ul class="subject-percentage" id="subject_percentage">
+            </ul>
+            <ul class="subject-grade" id="subject_grade">
+            </ul>
+            <ul class="subject-status" id="subject_status">
+            </ul> -->
+        </div>
     </main>
     <script src="js/main.js"></script>
 </body>
