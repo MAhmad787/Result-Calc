@@ -19,37 +19,37 @@ const sbj_name = document.querySelector('.sbjt-name');
 const sbj_obt = document.querySelector('.obt');
 const sbj_tot = document.querySelector('.tot');
 
-const usr_subject = {};
-let i = 1;
-next.addEventListener('click', () => {
-  if (
-    i < +nos.value &&
-    sbjt_name.value != ' ' &&
-    sbjt_tot.value != ' ' &&
-    sbjt_obt.value != ' '
-  ) {
-    i++;
-  }
+// const students = [(usr_subject = {})];
+// let i = 1;
+// next.addEventListener('click', () => {
+//   if (
+//     i < +nos.value &&
+//     sbjt_name.value != ' ' &&
+//     sbjt_tot.value != ' ' &&
+//     sbjt_obt.value != ' '
+//   ) {
+//     i++;
+//   }
 
-  usr_subject.name = sbjt_name.value;
-  usr_subject.tot = sbjt_tot.value;
-  usr_subject.obt = sbjt_obt.value;
+//   usr_subject.name = sbjt_name.value;
+//   usr_subject.tot = sbjt_tot.value;
+//   usr_subject.obt = sbjt_obt.value;
 
-  sbj_count.innerHTML = i;
-  sbjt_name.value = ' ';
-  sbjt_tot.value = ' ';
-  sbjt_obt.value = ' ';
-});
+//   sbj_count.innerHTML = i;
+//   sbjt_name.value = ' ';
+//   sbjt_tot.value = ' ';
+//   sbjt_obt.value = ' ';
+// });
 
-form.addEventListener('click', (e) => {
-  e.preventDefault();
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
 
-  //////////////////
-  name1.innerHTML = f_name.value;
-  name2.innerHTML = l_name.value;
-  stnd.innerHTML = clas.value;
-  subject.innerHTML = nos.value;
-  sbj_name.innerHTML = usr_subject.name;
-  sbj_tot.innerHTML = usr_subject.tot;
-  sbj_obt.innerHTML = usr_subject.obt;
-});
+//   //////////////////
+//   name1.innerHTML = f_name.value;
+//   name2.innerHTML = l_name.value;
+//   stnd.innerHTML = clas.value;
+//   subject.innerHTML = nos.value;
+//   sbj_name.innerHTML = usr_subject.name;
+//   sbj_tot.innerHTML = usr_subject.tot;
+//   sbj_obt.innerHTML = usr_subject.obt;
+// });

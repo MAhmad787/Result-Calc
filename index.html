@@ -5,82 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result Generator</title>
-    <style>
-        input {
-            width: 300px;
-            padding: 1rem;
-        }
-
-
-        @media (max-width: 800px) {
-            .screen {
-                flex-direction: column;
-            }
-        }
-
-        .subj {
-            width: max-content;
-            height: max-content;
-            background-color: #c4c;
-            padding: 1rem;
-        }
-    </style>
-
+    <title>Result Creator</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="screen">
-        <div class="form">
-            <h3>First Name</h3>
-            <input type="text" id='f_name' class='f-name'>
-            <h3>Last Name</h3>
-            <input type="text" id='l_name' class='l-name'>
-            <h3>Class</h3>
-            <input type="text" id='class' class='class'>
-            <h3>Number of Subject</h3>
-            <input type="number" min='1' max='8' id='nos' class='nos'>
-            <br>
-            <form class="subj">
-                <h4>subject <span id='sbj-count'>1</span> Name</h4>
-                <input type="text" id='sbj-name'>
-                <h4>Total Marks</h4>
-                <input type="text" id='sbj-tot'>
-                <h4>Obt Marks</h4>
-                <input type="text" id='sbj-obt'>
-                <br>
-                <br>
-                <input type='button' id='next' value='next'>
-            </form>
-            <hr>
-            <br>
-            <br>
-            <input type="submit" value="submit">
-        </div>
+    <main class="input-container">
+        <h1>Result Calculator</h1>
+        <form class="input" id='input_form'>
+            <div class="name">
+                <h3>Name</h3>
+                <div class="fields">
+                    <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='First Name'
+                        class='f-name' id='f_name' required>
+                    <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Last Name'
+                        class='l-name' id='l_name' required>
+                </div>
+            </div>
+            <div class="city">
+                <h3>City</h3>
 
-        <div class="output">
-            <h1>Result</h1>
-            <h3>First Name</h3>
-            <p class="name1"></p>
-            <h3>Last Name</h3>
-            <p class="name2"></p>
-            <h3>Class</h3>
-            <p class="stnd"></p>
-            <h3>Number of Subjects
+                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Your City' class='city'
+                    id='city' required>
+            </div>
+            <div class="institute">
+                <h3>Institute</h3>
 
-                <span class="subject"></span>
-            </h3>
+                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' placeholder='Your Institute'
+                    class='institute' id='institute' required>
+            </div>
+            <div class="nos-box">
+                <h3>Number of Subjects</h3>
+                <div class="fields">
 
-            <h4 class="sbjt-name">english</h4>
-            total <span class='tot'></span>
-            &ensp;
-            &ensp;
-            &ensp;
-            obtained <span class='obt'></span>
-        </div>
-    </div>
-
-    <script src='script.js'></script>
+                    <input type="number" title='Must Be a Number' pattern='[0-9]' placeholder='No.' class='nos' id='nos'
+                        required min='1' max='8'>
+                    <input type="button" value="Enter Marks" class='enter' id='enter'>
+                </div>
+            </div>
+            <div class="subjects-box" id='subj_box'>
+                <h3>Name of Subject <span id="count"></span></h3>
+                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' id='n_subj' class='n-subj'
+                    placeholder='Subject' required>
+                <div class="marks">
+                    <h3>Marks</h3>
+                    <input type="text" name="total" id="tot" class="tot" placeholder='Total Marks' required>
+                    <input type="text" name="obtained" id="obt" class="obt" placeholder='Obtained' required>
+                    <br>
+                    <input type="button" id='next' class='next' value='Next'>
+                </div>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Get Totals" class="submit" id="submit">
+            </div>
+        </form>
+    </main>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

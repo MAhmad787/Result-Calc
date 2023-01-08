@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Generator</title>
+    <style>
+        input {
+            width: 300px;
+            padding: 1rem;
+        }
+
+
+        @media (max-width: 800px) {
+            .screen {
+                flex-direction: column;
+            }
+        }
+
+        .subj {
+            width: max-content;
+            height: max-content;
+            background-color: #c4c;
+            padding: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="screen">
+        <form class="form">
+            <h3>First Name</h3>
+            <input type="text" id='f_name' class='f-name'>
+            <h3>Last Name</h3>
+            <input type="text" id='l_name' class='l-name'>
+            <h3>Class</h3>
+            <input type="text" id='class' class='class'>
+            <h3>Number of Subject</h3>
+            <input type="number" min='1' max='8' id='nos' class='nos'>
+            <br>
+
+            <hr>
+            <br>
+            <br>
+            <input type="submit" value="submit it" id='submit'>
+        </form>
+
+        <div class="output">
+            <h1>Result</h1>
+            <h3>First Name</h3>
+            <p class="name1"></p>
+            <h3>Last Name</h3>
+            <p class="name2"></p>
+            <h3>Class</h3>
+            <p class="stnd"></p>
+            <h3>Number of Subjects
+
+                <span class="subject"></span>
+            </h3>
+
+            <h4 class="sbjt-name">english</h4>
+            total <span class='tot'></span>
+            &ensp;
+            &ensp;
+            &ensp;
+            obtained <span class='obt'></span>
+        </div>
+    </div> -->
+
+
+
+    <form class="subj">
+        <h4>subject <span id='sbj-count'>1</span> Name</h4>
+        <input type="text" id='sbj-name'>
+        <h4>Total Marks</h4>
+        <input type="text" id='sbj-tot'>
+        <h4>Obt Marks</h4>
+        <input type="text" id='sbj-obt'>
+        <br>
+        <br>
+        <input type='button' id='next' value='next'>
+    </form>
+    <!-- <input type="text" id='input'>
+    <button id='send'>send</button> -->
+    <!-- <script src='script.js'></script> -->
+    <script>
+        const send = document.getElementById("next")
+        const sbj_name = document.getElementById("sbj-name")
+        const tot = document.getElementById("sbj-tot")
+        const obt = document.getElementById("sbj-obt")
+        const sbjt = document.querySelector(".subj")
+        let names = [];
+        next.addEventListener("click", () => {
+            let user = {};
+            user.name = sbj_name.value;
+            user.total = tot.value;
+            user.obt = obt.value;
+            names.push(user);
+            console.log(names);
+
+            sbj_name.value = ' ';
+            tot.value = ' ';
+            obt.value = ' ';
+            console.log(names);
+        })
+    </script>
+</body>
+
+</html>
