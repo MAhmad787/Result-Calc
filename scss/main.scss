@@ -63,19 +63,20 @@
       border-radius: 10px;
       background-color: #16a085;
       height: max-content;
+      display: none;
     }
   }
 }
 
-#msg {
+span:not(#count) {
   color: red;
   letter-spacing: 2px;
   font-size: 17px;
   display: none;
 }
-// #submit {
-// display: none;
-// }
+#submit {
+  display: none;
+}
 // ! JS Class
 
 ////////////////////////////////////////////////////////////////////

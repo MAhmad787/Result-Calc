@@ -38,10 +38,10 @@
                 <h3>Number of Subjects</h3>
                 <div class="fields">
 
-                    <input type="number" title='Must Be a Number' pattern='[0-9]' placeholder='No.' class='nos' id='nos'
-                        required min='1' max='8'>
+                    <input type="number" placeholder='No.' class='nos' id='nos' required min='1' max='8'>
                     <input type="button" value="Enter Marks" class='enter' id='enter'>
                 </div>
+                <span id='n_msg'>Must a number 1-9!</span>
             </div>
             <div class="subjects-box" id='subj_box'>
                 <h3>Name of Subject <span id="count">1</span></h3>
@@ -93,12 +93,16 @@
             <ul class="subject-obt" id="subject_obt">
                 <h3>Obtained</h3>
             </ul>
-            <!-- <ul class="subject-percentage" id="subject_percentage">
+            <ul class="subject-percentage" id="subject_percentage">
+
+                <h3>Percentage</h3>
             </ul>
             <ul class="subject-grade" id="subject_grade">
+                <h3>Grade</h3>
             </ul>
             <ul class="subject-status" id="subject_status">
-            </ul> -->
+                <h3>Status</h3>
+            </ul>
         </div>
     </main>
     <script src="js/main.js"></script>
