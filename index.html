@@ -44,13 +44,15 @@
                 </div>
             </div>
             <div class="subjects-box" id='subj_box'>
-                <h3>Name of Subject <span id="count"></span></h3>
-                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' id='n_subj' class='n-subj'
-                    placeholder='Subject' required>
+                <h3>Name of Subject <span id="count">1</span></h3>
+                <input type="text" title='Must Be Alphabets' pattern='[a-zA-Z]{}' id='n_subj' class='n-subj' required>
                 <div class="marks">
-                    <h3>Marks</h3>
-                    <input type="text" name="total" id="tot" class="tot" placeholder='Total Marks' required>
-                    <input type="text" name="obtained" id="obt" class="obt" placeholder='Obtained' required>
+                    <h3>Total Marks</h3>
+                    <input type="text" name="total" id="tot" class="tot" required>
+                    <h3>Obtained Marks</h3>
+
+                    <input type="text" name="obtained" id="obt" class="obt" required>
+                    <span id='msg'>Please Fill all fields!</span>
                     <br>
                     <input type="button" id='next' class='next' value='Next'>
                 </div>
