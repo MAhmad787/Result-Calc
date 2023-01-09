@@ -32,6 +32,10 @@ const Obtained = document.getElementById('subject_obt');
 const Percentage = document.getElementById('subject_percentage');
 const Grade = document.getElementById('subject_grade');
 const Status = document.getElementById('subject_status');
+const Details = document.querySelector('.details');
+const NoSubject = document.querySelector('.nos-box');
+const Input = document.querySelector('.input-container');
+const Output = document.querySelector('.output-container');
 
 enter.addEventListener('click', () => {
   let count = +num_subj.value;
@@ -43,11 +47,11 @@ enter.addEventListener('click', () => {
     }, 3000);
   } else {
     subj_box.style.display = 'block';
+    NoSubject.style.display = 'none';
   }
 });
 
 // Students Marks Array
-const student = {};
 const subject = [];
 // * Incrementing the counter
 let i = 1;
@@ -86,14 +90,15 @@ next.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  Input.style.display = 'none';
+  Output.style.display = 'block';
+  const student = {};
   student.first_name = f_name.value;
   student.last_name = l_name.value;
   student.class = i_class.value;
   student.city = city.value;
   student.institute = institute.value;
-
   // Writing value into Element
-
   firstName.innerHTML = student.first_name;
   lastName.innerHTML = student.last_name;
   Class.innerHTML = student.class;
@@ -150,7 +155,7 @@ form.addEventListener('submit', (e) => {
 
     // ! Creating Percentage of Subject
     const Percent = document.createElement('li');
-    let percentage = (subject[i].obt / subject[i].total) * 100;
+    let percentage = (subject[i].obt / subject[i].total) * 100 + '%';
     Percent.innerHTML = percentage;
     Percentage.appendChild(Percent);
 

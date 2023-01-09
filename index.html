@@ -35,13 +35,14 @@
                 <input type="text" placeholder='Your Institute' class='institute' id='institute' required>
             </div>
             <div class="nos-box">
-                <h3>Number of Subjects</h3>
+                <h3>No. of Subjects</h3>
                 <div class="fields">
 
-                    <input type="number" placeholder='No.' class='nos' id='nos' required min='1' max='8'>
+                    <input type="number" class='nos' id='nos' required min='1' max='8'>
+                    <br>
                     <input type="button" value="Enter Marks" class='enter' id='enter'>
                 </div>
-                <span id='n_msg'>Must a number 1-9!</span>
+                <span id='n_msg' class='msg'>Must a number 1-9!</span>
             </div>
             <div class="subjects-box" id='subj_box'>
                 <h3>Name of Subject <span id="count">1</span></h3>
@@ -52,9 +53,9 @@
                     <h3>Obtained Marks</h3>
 
                     <input type="text" name="obtained" id="obt" class="obt" required>
-                    <span id='msg'>Please Fill all fields!</span>
+                    <span id='msg' class='msg'>Please Fill all fields!</span>
                     <br>
-                    <input type="button" id='next' class='next' value='Next'>
+                    <input type="button" id='next' class='next' value='Submit'>
                 </div>
             </div>
             <div class="submit">
@@ -63,11 +64,11 @@
         </form>
     </main>
 
-    <hr>
-    <hr>
-    <hr>
     <main class="output-container">
-        <h1>Your Result</h1>
+        <center>
+            <h1>Your Result</h1>
+        </center>
+        <br><br>
         <div class="details">
             <h3>First Name : <span id='o_f_name'></span></h3>
             <br>
@@ -79,6 +80,9 @@
             <br>
             <h3>Institute : <span id='o_institute'></span></h3>
         </div>
+        <br>
+        <br>
+        <br>
         <div class="stats">
             <ul class="sr-number" id="sr_number">
                 <h3>Sr No.</h3>

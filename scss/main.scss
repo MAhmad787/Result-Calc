@@ -47,16 +47,6 @@
         width: 50%;
       }
     }
-    .nos-box {
-      .fields {
-        display: flex;
-        justify-content: space-around;
-        width: max-content;
-        input.nos {
-          margin-right: 10px;
-        }
-      }
-    }
     .subjects-box {
       width: 320px;
       padding: 1rem;
@@ -68,7 +58,7 @@
   }
 }
 
-span:not(#count) {
+.msg {
   color: red;
   letter-spacing: 2px;
   font-size: 17px;
@@ -79,8 +69,12 @@ span:not(#count) {
 }
 // ! JS Class
 
-////////////////////////////////////////////////////////////////////
-///  Stats
+//  Stats
+
+.output-container {
+  display: none;
+}
+
 .stats {
   display: flex;
   align-items: center;
