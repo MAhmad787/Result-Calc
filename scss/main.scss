@@ -83,3 +83,9 @@
     list-style: none;
   }
 }
+
+@media (max-width: 600px) {
+  * {
+    font-size: 50%;
+  }
+}

@@ -155,8 +155,9 @@ form.addEventListener('submit', (e) => {
 
     // ! Creating Percentage of Subject
     const Percent = document.createElement('li');
-    let percentage = (subject[i].obt / subject[i].total) * 100 + '%';
-    Percent.innerHTML = percentage;
+    let percentage = (subject[i].obt / subject[i].total) * 100;
+    percentage = percentage.toFixed(2);
+    Percent.innerHTML = percentage + '%';
     Percentage.appendChild(Percent);
 
     // ! Creating Percentage of Subject
