@@ -54,6 +54,10 @@
       background-color: #16a085;
       height: max-content;
       display: none;
+
+      // .next {
+      //   display: none;
+      // }
     }
   }
 }
@@ -73,14 +77,22 @@
 
 .output-container {
   display: none;
-}
 
-.stats {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  ul {
-    list-style: none;
+  h3 {
+    span {
+      font-weight: 700;
+    }
+  }
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    ul {
+      list-style: none;
+      * {
+        font-weight: 700;
+      }
+    }
   }
 }
 

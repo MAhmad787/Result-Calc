@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result Creator</title>
+    <title>Enter Marks</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+    <!-- ? Input Section  -->
     <main class="input-container">
         <h1>Result Calculator</h1>
         <form class="input" id='input_form'>
@@ -53,16 +54,20 @@
                     <h3>Obtained Marks</h3>
 
                     <input type="text" name="obtained" id="obt" class="obt" required>
-                    <span id='msg' class='msg'>Please Fill all fields!</span>
+                    <span id='msg' class='msg'></span>
                     <br>
                     <input type="button" id='next' class='next' value='Submit'>
                 </div>
             </div>
+
             <div class="submit">
+
                 <input type="submit" value="Get Totals" class="submit" id="submit">
             </div>
         </form>
     </main>
+
+    <!-- ? Output Section  -->
 
     <main class="output-container">
         <center>
@@ -86,29 +91,37 @@
         <div class="stats">
             <ul class="sr-number" id="sr_number">
                 <h3>Sr No.</h3>
+                <br>
             </ul>
             <ul class="subject-name" id="subject_name">
                 <h3>Subject</h3>
+                <br>
             </ul>
 
             <ul class="subject-total" id="subject_total">
                 <h3>Total</h3>
+                <br>
             </ul>
             <ul class="subject-obt" id="subject_obt">
                 <h3>Obtained</h3>
+                <br>
             </ul>
             <ul class="subject-percentage" id="subject_percentage">
 
                 <h3>Percentage</h3>
+                <br>
             </ul>
             <ul class="subject-grade" id="subject_grade">
                 <h3>Grade</h3>
+                <br>
             </ul>
             <ul class="subject-status" id="subject_status">
                 <h3>Status</h3>
+                <br>
             </ul>
         </div>
     </main>
+
     <script src="js/main.js"></script>
 </body>
 

@@ -39,7 +39,6 @@ const Output = document.querySelector('.output-container');
 
 enter.addEventListener('click', () => {
   let count = +num_subj.value;
-  console.log(count);
   if (count > 9 || count < 1) {
     n_msg.style.display = 'block';
     setTimeout(function () {
@@ -56,14 +55,35 @@ const subject = [];
 // * Incrementing the counter
 let i = 1;
 
+// * Check if Obtained are not greater than Total
+let totCurrentValue;
+let regExp = /[0-9]*$/g;
+obt.addEventListener('input', () => {
+  totCurrentValue = +tot.value;
+  if (!obt.value.match(regExp) && !tot.value.match(regExp)) {
+    msg.innerHTML = 'Marks must be number!';
+    msg.style.display = 'block';
+    msg.style.fontSize = '15px';
+  } else if (+obt.value > totCurrentValue) {
+    msg.innerHTML = 'Obtained cannot be greater than Totals';
+    msg.style.display = 'block';
+    msg.style.fontSize = '14px';
+  } else {
+    msg.style.display = 'none';
+  }
+});
 next.addEventListener('click', () => {
   if (
     i <= +num_subj.value &&
+    name_subj.value != '' &&
+    tot.value != '' &&
+    obt.value != '' &&
     name_subj.value != ' ' &&
     tot.value != ' ' &&
     obt.value != ' '
   ) {
     i++;
+
     // * Storing the value in the Object
     let user = {};
     user.name = name_subj.value;
@@ -81,13 +101,14 @@ next.addEventListener('click', () => {
       submit.style.display = 'block';
     }
   } else {
+    msg.innerHTML = 'Please Fill all fields correctly';
     msg.style.display = 'block';
+    msg.style.fontSize = '14px';
     const myTimeout = setTimeout(function () {
       msg.style.display = 'none';
     }, 3000);
   }
 });
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   Input.style.display = 'none';
@@ -123,6 +144,20 @@ form.addEventListener('submit', (e) => {
     return grade;
   }
 
+  function totalSum(subject) {
+    let sum = 0;
+    for (let i = 0; i < subject.length; i++) {
+      sum += +subject[i].total;
+    }
+    return sum;
+  }
+  function obtainSum(subject) {
+    let sum = 0;
+    for (let i = 0; i < subject.length; i++) {
+      sum += +subject[i].obt;
+    }
+    return sum;
+  }
   function printStatus(percentage) {
     let Status;
     if (percentage < 60) {
@@ -132,6 +167,7 @@ form.addEventListener('submit', (e) => {
     }
     return Status;
   }
+
   for (let i = 0; i < +num_subj.value; i++) {
     // ! Creating Serial Numbers
     const serialNumber = document.createElement('li');
@@ -160,13 +196,49 @@ form.addEventListener('submit', (e) => {
     Percent.innerHTML = percentage + '%';
     Percentage.appendChild(Percent);
 
-    // ! Creating Percentage of Subject
+    // ! Creating Grade of Subject
     const Grading = document.createElement('li');
     Grading.innerHTML = printGrade(percentage);
     Grade.appendChild(Grading);
-    // ! Creating Percentage of Subject
+    // ! Creating Status of Subject
     const status = document.createElement('li');
     status.innerHTML = printStatus(percentage);
     Status.appendChild(status);
   }
+  // ! Creating an Empty Space
+  const serialNumber = document.createElement('li');
+  serialNumber.innerHTML = '____';
+  Serial.appendChild(serialNumber);
+  // ! Creating Total Heading of Subject
+  const totalHeading = document.createElement('h3');
+  totalHeading.innerHTML = 'Grand Total: ';
+  Subject.appendChild(totalHeading);
+  // ! Creating Total Marks of Subject
+  const totalMarks = document.createElement('h3');
+  totalMarks.innerHTML = totalSum(subject);
+  let total_Sum = totalSum(subject);
+  console.log(total_Sum);
+  Total.appendChild(totalMarks);
+  // ! Creating Obtained Marks of Subject
+  const totalObtained = document.createElement('h3');
+  totalObtained.innerHTML = obtainSum(subject);
+  let obtain_Sum = obtainSum(subject);
+  console.log(obtain_Sum);
+  Obtained.appendChild(totalObtained);
+
+  // ! Creating Percentage of Total Marks
+  const totalPercent = document.createElement('h3');
+  let totalPercentage = (obtain_Sum / total_Sum) * 100;
+  totalPercentage = totalPercentage.toFixed(2);
+  totalPercent.innerHTML = totalPercentage + '%';
+  Percentage.appendChild(totalPercent);
+
+  // ! Creating Grade of Total Marks
+  const totalGrading = document.createElement('h3');
+  totalGrading.innerHTML = printGrade(totalPercentage);
+  Grade.appendChild(totalGrading);
+  // ! Creating Status of Total Marks
+  const totalStatus = document.createElement('h3');
+  totalStatus.innerHTML = printStatus(totalPercentage);
+  Status.appendChild(totalStatus);
 });
