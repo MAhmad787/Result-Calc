@@ -56,24 +56,13 @@ const subject = [];
 let i = 1;
 
 // * Check if Obtained are not greater than Total
-let totCurrentValue;
-let regExp = /[0-9]*$/g;
-obt.addEventListener('input', () => {
-  totCurrentValue = +tot.value;
-  if (!obt.value.match(regExp) && !tot.value.match(regExp)) {
-    msg.innerHTML = 'Marks must be number!';
-    msg.style.display = 'block';
-    msg.style.fontSize = '15px';
-  } else if (+obt.value > totCurrentValue) {
+
+next.addEventListener('click', () => {
+  if (+obt.value > +tot.value) {
     msg.innerHTML = 'Obtained cannot be greater than Totals';
     msg.style.display = 'block';
     msg.style.fontSize = '14px';
-  } else {
-    msg.style.display = 'none';
-  }
-});
-next.addEventListener('click', () => {
-  if (
+  } else if (
     i <= +num_subj.value &&
     name_subj.value != '' &&
     tot.value != '' &&
@@ -111,6 +100,7 @@ next.addEventListener('click', () => {
 });
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  console.log('hello');
   Input.style.display = 'none';
   Output.style.display = 'block';
   const student = {};
